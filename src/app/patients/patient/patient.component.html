@@ -1,0 +1,48 @@
+<h1 class="display-4">Ajouter Patient </h1>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+
+  <div class="form-group">
+    <label for="num_facture">Numéro Facture:</label>
+    <input name="num_facture" #num_facture="ngModel" [(ngModel)]="service.formData.num_facture" class="form-control" placeholder="Numéro Facture" required>
+    <div *ngIf="num_facture.invalid  && num_facture.touched " class="validation-error">*Ce champ est requis</div>
+  </div>
+
+  <div class="form-group">
+    <label for="nom">Nom:</label>
+    <input name="nom" #nom="ngModel" [(ngModel)]="service.formData.nom" class="form-control" placeholder="Nom">
+  </div>
+
+  <div class="form-group">
+      <label for="prenom">Prenom:</label>
+      <input name="prenom" #prenom="ngModel" [(ngModel)]="service.formData.prenom" class="form-control" placeholder="Prenom">
+  </div>
+
+  <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date"  name="date" #date="ngModel" [(ngModel)]="service.formData.date" class="form-control" placeholder="Date">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="date">Heur Debut:</label>
+      <input type="time" name="heur_debut" #heur_debut="ngModel" [(ngModel)]="service.formData.heur_debut" class="form-control" placeholder="Heur debut">
+    </div>
+    <div class="form-group  col-md-6">
+      <label for="date">Heur Fin:</label>
+      <input type="time"  name="heur_fin" #heur_fin="ngModel" [(ngModel)]="service.formData.heur_fin" class="form-control" placeholder="Heur Fin">
+    </div>
+  </div>
+
+  <div class="form-group">
+      <label for="date">Paye:</label>
+      <select name="paye" #paye="ngModel" [(ngModel)]="service.formData.paye" class="form-control">
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+      </select>
+  </div>
+  
+  <div class="form-group float-right">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-lg  btn-info">Ajouter</button>
+    </div>
+</form>

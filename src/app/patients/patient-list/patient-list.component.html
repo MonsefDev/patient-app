@@ -1,0 +1,56 @@
+<!--<table class="table table-hover">-->
+
+    <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Date</th>
+      <th>Heur Depart</th>
+      <th>Heur Fin</th>
+      <th>N° Facture</th>
+      <th>Payé</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor='let emp of list'>
+        <td (click)="onEdit(emp)">{{emp.nom}}</td>
+        <td (click)="onEdit(emp)">{{emp.prenom}}</td>
+        <td (click)="onEdit(emp)">{{emp.date}}</td>
+        <td (click)="onEdit(emp)">{{emp.heur_debut}}</td>
+        <td (click)="onEdit(emp)">{{emp.heur_fin}}</td>
+        <td (click)="onEdit(emp)">{{emp.num_facture}}</td>
+        <td (click)="onEdit(emp)">{{emp.paye}}</td>
+        <td><a class="btn text-danger" (click)="ondelete(emp.id)"><i class="fa fa-trash"></i></a></td>
+   
+      </tr>
+    </tbody>
+  </table>
+  
+   
+  <table id="table_id" class="table table-striped table-bordered display">
+      <thead>
+          <tr>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Date</th>
+              <th>Heur Depart</th>
+              <th>Heur Fin</th>
+              <th>N° Facture</th>
+              <th>Payé</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor='let emp of list'>
+              <td (click)="onEdit(emp)">{{emp.nom}}</td>
+              <td (click)="onEdit(emp)">{{emp.prenom}}</td>
+              <td (click)="onEdit(emp)">{{emp.date}}</td>
+              <td (click)="onEdit(emp)">{{emp.heur_debut}}</td>
+              <td (click)="onEdit(emp)">{{emp.heur_fin}}</td>
+              <td (click)="onEdit(emp)">{{emp.num_facture}}</td>
+              <td (click)="onEdit(emp)">{{emp.paye}}</td>
+              <td><a class="btn text-danger" (click)="ondelete(emp.id)"><i class="fa fa-trash"></i></a></td>
+         
+            </tr>
+      </tbody>
+  </table>
